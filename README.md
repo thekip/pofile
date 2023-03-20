@@ -1,4 +1,3 @@
-![Main Suite][Badge-MainSuite-GithubCI]
 [![Code Coverage][Badge-Coverage]][Coverage]
 [![License][badge-license]][license]
 [![Version][badge-version]][package]
@@ -9,7 +8,7 @@
 
 > Parse and serialize Gettext PO files.
 
-## Description:
+## Fork Description:
 
 This is a fork of [rubenv/pofile](rubenv/pofile). The original author considered that project as "finished".
 But in modern software development there no such thing as finished code. Ecosystem changes over time,
