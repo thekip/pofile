@@ -1,8 +1,13 @@
+![Main Suite][Badge-MainSuite-GithubCI]
+[![Code Coverage][Badge-Coverage]][Coverage]
+[![License][badge-license]][license]
+[![Version][badge-version]][package]
+[![Downloads][badge-downloads]][package]
+[![Join the community on Discord][Badge-Discord]][Discord]
+
 # pofile - gettext .po parsing for JavaScript
 
 > Parse and serialize Gettext PO files.
-
-[//]: todo add badges
 
 ## Description:
 
@@ -86,27 +91,8 @@ The `POItem` class exposes the following members:
 Styleguide is forced by prettier, test are written used Jest. 
 Add unit tests for any new or changed functionality. Run prettier before commiting the code.
 
-## License 
-
-    (The MIT License)
-
-    Copyright (C) 2013-2017 by Ruben Vermeersch <ruben@rocketeer.be>
-    Copyright (C) 2012 by Michael Holly
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in
-    all copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-    THE SOFTWARE.
+[Badge-MainSuite-GithubCI]: https://github.com/thekip/pofile/workflows/test/badge.svg
+[Coverage]: https://codecov.io/gh/lingui/js-lingui
+[license]: https://github.com/lingui/pofile/blob/main/LICENSE
+[package]: https://www.npmjs.com/package/@lingui/pofile
+[Discord]: https://discord.gg/gFWwAYnMtA
