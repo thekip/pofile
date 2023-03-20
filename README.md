@@ -2,37 +2,41 @@
 
 > Parse and serialize Gettext PO files.
 
-[![Build Status](https://travis-ci.org/rubenv/pofile.png?branch=master)](https://travis-ci.org/rubenv/pofile)
+[//]: # ([![Build Status]&#40;https://travis-ci.org/rubenv/pofile.png?branch=master&#41;]&#40;https://travis-ci.org/rubenv/pofile&#41;)
+
+## Description:
+
+This is a fork of [rubenv/pofile](rubenv/pofile). The original author considered that project as "finished".
+But in modern software development there no such thing as finished code. Ecosystem changes over time,
+new technologies and best practices appear and one day code become obsolete and not compatible with 
+current technologies. 
+
+This fork aimed to keep this lib up to day using modern tooling and under stewardship of `LinguiJS` org.
+
+- No functional changes in reading/parsing
+- Full rewrite to Typescript + codebase aligned with modern JS syntax
+- Entities exported as ESM - means no more problems with importing Type
+- Built as cjs + esm typings extracted from code
+- `load()` and `save()` methods are removed. Use native modules for that.
+- Test are re-implemented in Jest
 
 ## Usage
 Add pofile to your project:
 
-### Installation (Node.JS, browser via Browserified)
-```
-npm install --save pofile
-```
-
-Reference it in your code:
-
-```js
-var PO = require('pofile');
-```
-
-### Installation (via bower)
-```
-bower install --save pofile
-```
-
-Add it to your HTML file:
-
-```html
-<script src="bower_components/pofile/dist/pofile.js"></script>
+### Installation
+```bash
+npm install --save @lingui/pofile
+# or
+yarn add @lingui/pofile
 ```
 
 Reference it in your code:
 
 ```js
-var PO = require('pofile');
+import {PO} from '@lingui/pofile';
+
+// or using commonjs
+const {PO} = require('@lingui/pofile')
 ```
 
 ### Loading and parsing
@@ -40,48 +44,29 @@ var PO = require('pofile');
 You can create a new empty PO file by using the class:
 
 ```js
-var po = new PO();
-```
-
-Or by loading a file (Node.JS only):
-
-```js
-PO.load('text.po', function (err, po) {
-    // Handle err if needed
-    // Do things with po
-});
+const po = new PO();
 ```
 
 Or by parsing a string:
 
 ```js
-var po = PO.parse(myString);
+const po = PO.parse(myString);
 ```
 
 ### The PO class
 
-The `PO` class exposes three members:
+The `PO` class exposes members:
 
 * `comments`: An array of comments (found at the header of the file).
 * `headers`: A dictionary of the headers.
-* `items`: An array of `PO.Item` objects, each of which represents a string
+* `items`: An array of `POItem` objects, each of which represents a string
   from the gettext catalog.
+* `toString()`: Serializes the po file to a string.
 
-There are two methods available:
 
-* `save`: Accepts a filename and callback, writes the po file to disk.
+### The PoItem class
 
-```js
-po.save('out.po', function (err) {
-    // Handle err if needed
-});
-```
-
-* `toString`: Serializes the po file to a string.
-
-### The PO.Item class
-
-The `PO.Item` class exposes the following members:
+The `POItem` class exposes the following members:
 
 * `msgid`: The message id.
 * `msgid_plural`: The plural message id (null if absent).
@@ -98,46 +83,8 @@ The `PO.Item` class exposes the following members:
 
 ## Contributing
 
-In lieu of a formal styleguide, take care to maintain the existing coding
-style. Add unit tests for any new or changed functionality. Lint and test your
-code using [Grunt](http://gruntjs.com/).
-
-## Credits
-
-Originally based on node-po (written by Michael Holly). Rebranded because
-node-po is unmaintained and because this library is no longer limited to
-Node.JS: it works in the browser too.
-
-### Changes compared to node-po
-
-* Proper handling of async methods that won't crash your Node.JS process when
-  something goes wrong.
-* Support for parsing string flags (e.g. fuzzy).
-* A test suite.
-* Browser support (through Browserified and bower).
-
-### Migrating from node-po
-
-You'll need to update the module reference: `require('pofile')` instead of
-`require('node-po')`.
-
-At the initial release, node-po and pofile have identical APIs, with one small
-exception: the `save` and `load` methods now take a callback that has an `err`
-parameter: `(err)` for `save` and `(err, po)` for `load`. This is similar to
-Node.JS conventions.
-
-Change code such as:
-
-```js
-PO.load('text.po', function (po) {
-```
-
-To:
-
-```js
-PO.load('text.po', function (err, po) {
-    // Handle err if needed
-```
+Styleguide is forced by prettier, test are written used Jest. 
+Add unit tests for any new or changed functionality. Run prettier before commiting the code.
 
 ## License 
 
