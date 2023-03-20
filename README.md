@@ -1,8 +1,10 @@
-[![Code Coverage][Badge-Coverage]][Coverage]
-[![License][badge-license]][license]
-[![Version][badge-version]][package]
-[![Downloads][badge-downloads]][package]
-[![Join the community on Discord][Badge-Discord]][Discord]
+[![npm](https://img.shields.io/npm/v/@lingui/pofile?logo=npm&cacheSeconds=1800)](https://www.npmjs.com/package/@lingui/pofile)
+[![npm](https://img.shields.io/npm/dt/@lingui/pofile?cacheSeconds=500)](https://www.npmjs.com/package/@lingui/pofile)
+[![npm](https://img.shields.io/codecov/c/github/thekip/pofile/main.svg)](https://codecov.io/gh/thekip/pofile)
+[![CI](https://github.com/thekip/pofile/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/lingui/pofile/actions/workflows/ci.yml)
+[![GitHub contributors](https://img.shields.io/github/contributors/thekip/pofile?cacheSeconds=1000)](https://github.com/lingui/pofile/graphs/contributors)
+[![GitHub](https://img.shields.io/github/license/lingui/swc-plugin)](https://github.com/lingui/pofile/blob/main/LICENSE)
+
 
 # pofile - gettext .po parsing for JavaScript
 
@@ -90,8 +92,8 @@ The `POItem` class exposes the following members:
 Styleguide is forced by prettier, test are written used Jest. 
 Add unit tests for any new or changed functionality. Run prettier before commiting the code.
 
-[Badge-MainSuite-GithubCI]: https://github.com/thekip/pofile/workflows/test/badge.svg
-[Coverage]: https://codecov.io/gh/lingui/js-lingui
+## License
+
+The project is licensed under the [MIT][License] license.
+
 [license]: https://github.com/lingui/pofile/blob/main/LICENSE
-[package]: https://www.npmjs.com/package/@lingui/pofile
-[Discord]: https://discord.gg/gFWwAYnMtA
