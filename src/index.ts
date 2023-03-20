@@ -13,13 +13,31 @@ export type PoHeaders = {
 };
 
 export class PO {
+  /**
+   * An array of comments (found at the header of the file).
+   */
   comments: string[] = [];
+  /**
+   * An array of string extracted from the code (found at the header of the file).
+   */
   extractedComments: string[] = [];
+  /**
+   * A dictionary of the headers.
+   */
   headers: Partial<PoHeaders> = {};
+  /**
+   * You can define manual order of headers passing array of header keys here.
+   */
   headerOrder: string[] = [];
+  /**
+   * An array of `POItem` objects, each of which represents a string rom the gettext catalog.
+   */
   items: PoItem[] = [];
 
-  public toString() {
+  /**
+   * Serializes the po file to a string.
+   */
+  public toString(): string {
     const lines: string[] = [];
 
     if (this.comments) {
@@ -66,12 +84,12 @@ export class PO {
     return lines.join("\n");
   }
 
-  public static parse(data: string) {
+  public static parse(data: string): PO {
     //support both unix and windows newline formats.
     data = data.replace(/\r\n/g, "\n");
     const po = new PO();
     const sections = data.split(/\n\n/);
-    let headers = [];
+    let headers: string[] = [];
     //everything until the first 'msgid ""' is considered header
     while (
       sections[0] &&
@@ -255,14 +273,43 @@ export function parsePluralForms(pluralFormsString: string): PluralFormsParsed {
 }
 
 export class PoItem {
+  /**
+   * The message id
+   */
   msgid: string = "";
+  /**
+   * Context of the message, an arbitrary string, can be used for disambiguation.
+   */
   msgctxt: string = null;
   references: string[] = [];
+
+  /**
+   * The plural message id (null if absent)
+   */
   msgid_plural?: string = null;
+
+  /**
+   * An array of translated strings. Items that have no plural msgid
+   * only have one element in this array.
+   */
   msgstr: string[] = [];
+  /**
+   * An array of string translator comments.
+   */
   comments: string[] = [];
+  /**
+   * An array of string extracted comments.
+   */
   extractedComments: string[] = [];
+  /**
+   * A dictionary of the string flags. Each flag is mapped to a key with value true.
+   * For instance, a string with the fuzzy flag set will have
+   * `item.flags.fuzzy == true`
+   */
   flags: Record<string, boolean | undefined> = {};
+  /**
+   * Is message Obsolete?
+   */
   obsolete: boolean = false;
 
   private nplurals: number;
