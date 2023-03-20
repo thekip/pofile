@@ -3,7 +3,7 @@
   "description": "Parse and serialize Gettext PO files.",
   "version": "1.0.0",
   "author": {
-    "name": "Tim Iatsennko"
+    "name": "Tim Iatsenko"
   },
   "contributors": [
     "Ruben Vermeersch",
@@ -29,8 +29,15 @@
     "mo",
     "po"
   ],
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
+    "lint:types": "tsc",
+    "prettier:check": "prettier --check '**/*.{ts,tsx,js,jsx}'",
     "build": "unbuild"
   },
   "devDependencies": {

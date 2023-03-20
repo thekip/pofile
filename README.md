@@ -2,7 +2,7 @@
 
 > Parse and serialize Gettext PO files.
 
-[//]: # ([![Build Status]&#40;https://travis-ci.org/rubenv/pofile.png?branch=master&#41;]&#40;https://travis-ci.org/rubenv/pofile&#41;)
+[//]: todo add badges
 
 ## Description:
 
